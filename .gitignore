@@ -1,6 +1,6 @@
-local files and directories
+#local files and directories
 .VSCODE
-localstack*
+*localstack*
 
 # Local .terraform directories
 **/.terraform/*
