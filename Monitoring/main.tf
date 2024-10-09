@@ -8,6 +8,8 @@ required_providers {
 }
 }
 
+#test
+
 #monitoring network on docker(compose)
 resource "docker_network" "monitoring_network"{
     name="monitoring_network"
