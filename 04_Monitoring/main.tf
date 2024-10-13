@@ -2,17 +2,16 @@ terraform {
   required_version = ">= 0.12"
 
 required_providers {
-│     docker = {
-│       source = "kreuzwerker/docker"
-│     }
+    docker = {
+        source = "kreuzwerker/docker"
+     }
 }
 }
 
-#test
-
-#monitoring network on docker(compose)
+#monitoring network on docker(local/compose)
 resource "docker_network" "monitoring_network"{
     name="monitoring_network"
+    scope="local" #or compose
 }
 
 module "prometheus" {
