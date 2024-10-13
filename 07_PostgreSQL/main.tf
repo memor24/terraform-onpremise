@@ -7,10 +7,10 @@ terraform {
 }
 ###provider for 1 server; multiple servers can also be defined w/alias
 provider "postgresql" {
-  host     = var.host #or "postgres_server_ip"
+  host     = var.host 
   port     = var.port
   database = "postgres"
-  username = var.username
+  username = "postgres_user"
   password = var.password
   sslmode  = "disabled"
   #Alternatively
@@ -72,4 +72,11 @@ resource "postgresql_schema" "my_schema" {
     usage_with_grant  = true
     role              = postgresql_role.app_dba.name
   }
+}
+
+####################
+#data sources
+##############
+data "postgresql_schemas" "my_schemas" {
+  database = "test_db"
 }
