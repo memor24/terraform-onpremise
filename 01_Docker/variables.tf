@@ -1,5 +1,28 @@
-variable  docker_container{
-  type        = string
+
+#container volume variables
+variable  container_name{
   default     = "sth"
-  description = "name of the docker container"
+  type        = string
+}
+variable container_path{
+  default="/usr/share/nginx/html"
+  type= string
+}
+variable host_path{
+  default="/data"
+  type= string
+}
+variable read_only{
+  default=false
+  type= bool
+}
+variable volume_name{
+  default= "sth_volume"
+  type=string
+}
+
+#container network variables
+variable scope{
+  type= string
+  default="local" #either swarm/global/local
 }
