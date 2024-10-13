@@ -1,4 +1,4 @@
-#test 2
+
 output "prometheus_url" {
   value       = "module.prometheus."
   description = "description"
