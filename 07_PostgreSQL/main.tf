@@ -10,7 +10,7 @@ provider "postgresql" {
   host     = var.host #or "postgres_server_ip"
   port     = var.port
   database = "postgres"
-  username = "postgres_user"
+  username = var.username
   password = var.password
   sslmode  = "disabled"
   #Alternatively
