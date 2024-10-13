@@ -20,14 +20,24 @@ resource "docker_image" "nginx" {
 #creates the nginx container using the created image
 resource "docker_container" "nginx" {
   image = docker_image.nginx.latest
-  name  = "var.docker_container.name"
+  name  = "var.container_name"
   ports {
     internal = 80
     external = 80
   }
+  restart{
+    default="on-failure"
+  }
+  volumes{
+    container_path=var.container_path
+    host_path=var.host_path
+    read_only=var.read_only
+    volume_name=var.volume_name
+  }
 }
 
 #creating a docker network locally
-resource "docker_network" "my-network" {
-
+resource "docker_network" "private-network" {
+  name="my-network"
+  scope=var.scope
 }
