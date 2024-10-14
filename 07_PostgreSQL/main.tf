@@ -1,26 +1,3 @@
-###TBU
-terraform {
-  version = 1.9
-  required_providers {
-    ###tbu
-  }
-}
-###provider for 1 server; multiple servers can also be defined w/alias
-provider "postgresql" {
-  host     = var.host 
-  port     = var.port
-  database = "postgres"
-  username = "postgres_user"
-  password = var.password
-  sslmode  = "disabled"
-  #Alternatively
-  #sslmode         = "require"
-  #clientcert {
-  # cert = "./07_PostgreSQL/public-certificate.pem"
-  # key  = "./07_PostgreSQL/to/private-key.pem"
-  #}
-}
-
 resource "postgresql_database" "test_db" {
   name  = "test_db"
   owner = "DevOps_team"
@@ -35,9 +12,9 @@ resource "postgresql_default_privileges" "revoke_public" {
   privileges  = []
 }
 
-#######################
+#################
 #postgres schema 
-#######################
+#################
 resource "postgresql_role" "app_www" {
   name = "app_www"
 }
@@ -59,12 +36,12 @@ resource "postgresql_schema" "my_schema" {
     role  = postgresql_role.app_www.name
   }
 
-  # app_releng can create new objects in the schema.  This is the role that
-  # migrations are executed as.
+  # app_releng can create new objects in the schema. 
+  # this is the role that migrations are executed as:
   policy {
+    role   = postgresql_role.app_releng.name
     create = true
     usage  = true
-    role   = postgresql_role.app_releng.name
   }
 
   policy {
@@ -74,7 +51,7 @@ resource "postgresql_schema" "my_schema" {
   }
 }
 
-####################
+##############
 #data sources
 ##############
 data "postgresql_schemas" "my_schemas" {

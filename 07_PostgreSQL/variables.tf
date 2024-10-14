@@ -5,15 +5,17 @@ variable "port" {
 
 variable "host" {
   default     = "localhost"
-  description = "host address" #e.g. "postgres_server_ip"
+  description = "host address" #i.e. "postgres_server_ip"
 }
 
 variable "username" {
   default = "postgres_user"
   type    = string
+  sensitive=true
 }
 
 variable "password" {
   default = "admin"
   type    = string
+  sensitive=true
 }
