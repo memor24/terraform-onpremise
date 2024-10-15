@@ -1,59 +1,51 @@
-resource "postgresql_database" "test_db" {
-  name  = "test_db"
-  owner = "DevOps_team"
+resource "postgresql_database" "test" {
+  name  = "test"
+  owner = "DevOps"
 }
 
 #revoking public access to default proivileges
 resource "postgresql_default_privileges" "revoke_public" {
-  database    = postgresql_database.test_db.name
+  database    = "postgresql_database.test.name"
   role        = "public"
-  owner       = "object_owner"
+  owner       = "DevOps"
   object_type = "function"
-  privileges  = []
+  privileges  = ["EXECUTE"]
+  }
+
+########################
+#postgres roles & schema 
+########################
+resource "postgresql_role" "app_web" {
+  name = "app_www"
+    policy {
+    role  = postgresql_role.app_web.name
+    usage = true
+  }
 }
 
-#################
-#postgres schema 
-#################
-resource "postgresql_role" "app_www" {
-  name = "app_www"
+resource "postgresql_role" "app_devops" {
+  name = "app_devops"
 }
+resource "postgresql_grant" "grant_app_devops" {
+    role  = "postgresql_role.app_devops.name"
+    database="test"
+    schema= "postgresql_schema.my_schema.name"
+    object_type= "schema"
+    privileges=["CREATE","USAGE"]
+  }
 
 resource "postgresql_role" "app_dba" {
   name = "app_dba"
 }
-
-resource "postgresql_role" "app_releng" {
-  name = "app_releng"
-}
-
+#defining the schema itself
 resource "postgresql_schema" "my_schema" {
   name  = "my_schema"
-  owner = "postgres"
-
-  policy {
-    usage = true
-    role  = postgresql_role.app_www.name
-  }
-
-  # app_releng can create new objects in the schema. 
-  # this is the role that migrations are executed as:
-  policy {
-    role   = postgresql_role.app_releng.name
-    create = true
-    usage  = true
-  }
-
-  policy {
-    create_with_grant = true
-    usage_with_grant  = true
-    role              = postgresql_role.app_dba.name
-  }
+  owner = "app_dba"
 }
 
 ##############
 #data sources
 ##############
-data "postgresql_schemas" "my_schemas" {
-  database = "test_db"
-}
+# data "postgresql_schemas" "my_schemas" {
+#   database = "test"
+# }

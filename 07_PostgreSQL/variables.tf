@@ -1,6 +1,13 @@
-variable "port" {
-  type    = number
-  default = 5432
+variable "username" {
+  default   = "postgres_user"
+  type      = string
+  sensitive = true
+}
+
+variable "password" {
+  default   = "admin"
+  type      = string
+  sensitive = true
 }
 
 variable "host" {
@@ -8,14 +15,7 @@ variable "host" {
   description = "host address" #i.e. "postgres_server_ip"
 }
 
-variable "username" {
-  default = "postgres_user"
-  type    = string
-  sensitive=true
-}
-
-variable "password" {
-  default = "admin"
-  type    = string
-  sensitive=true
+variable "port" {
+  type    = number
+  default = 5432
 }
