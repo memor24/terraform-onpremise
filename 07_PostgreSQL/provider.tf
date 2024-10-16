@@ -19,50 +19,20 @@ provider "postgresql" {
   sslmode  = "disabled" #or require/verify-ca/verify-full
 }
 
-# Bash script to check PostgreSQL status and configuration
+#bash script for the postgresql database config
 resource "null_resource" "check_postgresql" {
+
   provisioner "local-exec" {
-    command = <<EOT
-    #!/bin/bash
-
-    # Check if PostgreSQL is installed
-    if ! command -v psql >/dev/null 2>&1; then
-      echo "PostgreSQL is not installed. Installing PostgreSQL..."
-      sudo apt update
-      sudo apt install -y postgresql postgresql-contrib
+    command = <<EOF
+    #check if posgres is running
+    if ! systemctl --is-active postgresql; then
+        echo "PostgreSQL is not running. Starting PostgreSQL..."
+        sudo systemctl start postgresql@14-main
+        echo "PostgreSQL is running!"
     else
-      echo "PostgreSQL is already installed."
+        echo "PostgreSQL is already running!"
     fi
 
-    # Check if PostgreSQL is running
-    if ! systemctl is-active --quiet postgresql; then
-      echo "PostgreSQL is not running. Starting PostgreSQL..."
-      sudo systemctl start postgresql@14-main
-    else
-      echo "PostgreSQL is already running."
-    fi
-
-    # Temporarily switch to peer authentication for postgres user
-    echo "Switching to peer authentication temporarily..."
-    sudo sed -i 's/^local\s\+all\s\+postgres\s\+md5/local all postgres peer/' /etc/postgresql/14/main/pg_hba.conf
-    sudo systemctl restart postgresql@14-main
-
-    # Change the password for the postgres user
-    echo "Setting a new password for the postgres user..."
-    sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';" # Replace 'new_password' with your desired password
-    echo "Password has been updated."
-
-    # Exit PostgreSQL and exit script
-    echo "\\q" | sudo -u postgres psql
-    exit
-
-    # Switch back to md5 authentication
-    echo "Switching back to md5 authentication..."
-    sudo sed -i 's/^local\s\+all\s\+postgres\s\+peer/local all postgres md5/' /etc/postgresql/14/main/pg_hba.conf
-    sudo systemctl restart postgresql@14-main
-
-    echo "PostgreSQL configuration updated and md5 authentication re-enabled."
-    echo "PostgreSQL configuration looks good!"
-    EOT
+    EOF
   }
 }

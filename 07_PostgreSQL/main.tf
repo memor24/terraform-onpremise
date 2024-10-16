@@ -27,11 +27,11 @@ resource "postgresql_role" "app_dba" {
 }
 #app_dba policy:
 resource "postgresql_grant" "app_dba" {
-  role               = "app_dba"
-  database           = "test"
-  schema             = "my_schema"
-  object_type        = "schema"
-  privileges         = ["CREATE", "USAGE"]
+  role              = "app_dba"
+  database          = "test"
+  schema            = "my_schema"
+  object_type       = "schema"
+  privileges        = ["CREATE", "USAGE"]
   with_grant_option = true
 }
 
