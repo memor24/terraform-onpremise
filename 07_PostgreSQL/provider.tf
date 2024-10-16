@@ -24,7 +24,10 @@ resource "null_resource" "check_postgresql" {
 
   provisioner "local-exec" {
     command = <<EOF
-    #check if posgres is running
+    #!bin/bash
+
+    #check if posgres is running:
+    
     if ! systemctl --is-active postgresql; then
         echo "PostgreSQL is not running. Starting PostgreSQL..."
         sudo systemctl start postgresql@14-main
