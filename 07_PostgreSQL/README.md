@@ -1,6 +1,6 @@
 # PostgreSQL infrastructure
 
-##To creae 2 postgres db instances on a docker network locally using terraform:
+### To creae 2 postgres db instances on a docker network locally using terraform:
 
 ```
 terraform init
