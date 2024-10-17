@@ -14,22 +14,21 @@ resource "docker_container" "nginx_container" {
     external = 8080 #nginx service on the docker network
   }
   #mounting a volume for persistent data
-  volumes { 
+  volumes {
     container_path = var.container_path
-    volume_name    = var.volume_name
   }
   #connecting the container to the docker network
-  networks_advanced { 
-  name = docker_network.private_network.name
+  networks_advanced {
+    name = docker_network.private_network.name
   }
   #container auto restart
-  restart = "always" 
+  restart = "always"
 }
 
 #creating a docker network for nginx containers
 resource "docker_network" "private_network" {
-  name = var.container_network.name
-  driver=var.container_network.driver
+  name   = var.container_network.name
+  driver = var.container_network.driver
 }
 
 ###outputs:

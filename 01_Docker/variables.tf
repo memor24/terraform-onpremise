@@ -10,12 +10,12 @@ variable "container_path" {
 }
 
 variable "container_network" {
-  type= object{
-    name= string
-    driver= string
-  }
-  default={
-    name= "my_network4nginx"
-    driver="bridge"
+  type = object({
+    name   = string
+    driver = string
+  })
+  default = {
+    name   = "my_network4nginx"
+    driver = "bridge"
   }
 }

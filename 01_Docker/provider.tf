@@ -7,7 +7,7 @@ terraform {
   }
 }
 
- provider "docker" {
+provider "docker" {
   host = "unix:///var/run/docker.sock" #to run docker daemon for local access by terraform
-   #or tcp://localhost:2376 #plus config: to access remotely also
- }
+  #or tcp://localhost:2376 #plus config: to access remotely also
+}
