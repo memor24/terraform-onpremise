@@ -1,43 +1,42 @@
-#creates a sample nginx image from dockerhub via api
+#creates a (sample nginx) image from dockerhub
+# equivalent cmd: 'docker pull nginx:latest'
 resource "docker_image" "nginx_image" {
   name         = "nginx/nginx:latest"
-  keep_locally = "true"
-}
-
-#creating a volume that will be mounted on the container
-resource "docker_volume" "container_data" {
-  name = var.volume_name
+  keep_locally = "false"
 }
 
 #creates the nginx container using the created image
 resource "docker_container" "nginx_container" {
-  name  = "var.container_name"
-  image = "docker_image.nginx_image.name"
+  name  = var.container_name
+  image = "docker_image.nginx_image.image_id"
   ports {
     internal = 80
     external = 8080 #nginx service on the docker network
   }
-  volumes { #mounting a volume on to the container
+  #mounting a volume for persistent data
+  volumes { 
     container_path = var.container_path
     volume_name    = var.volume_name
   }
-  networks_advanced { #connecting the container to the docker network
-    name = docker_network.private_network.name
+  #connecting the container to the docker network
+  networks_advanced { 
+  name = docker_network.private_network.name
   }
-
-  restart = "always" #container auto restart
+  #container auto restart
+  restart = "always" 
 }
 
-#creating a docker network
+#creating a docker network for nginx containers
 resource "docker_network" "private_network" {
-  name = "my-network"
+  name = var.container_network.name
+  driver=var.container_network.driver
 }
 
-
+###outputs:
 output "nginx_url" {
   value = "http://localhost:8080"
 }
 
 output "container_ip" {
-  value = "docker_container.nginx.network_data[0].ip_address"
+  value = "docker_container.nginx_container.network_data[0].ip_address"
 }

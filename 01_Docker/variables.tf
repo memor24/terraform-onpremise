@@ -5,11 +5,17 @@ variable "container_name" {
   type    = string
 }
 variable "container_path" {
-  default = "/usr/share/nginx/html"
+  default = "/usr/share/nginx"
   type    = string
 }
 
-variable "volume_name" {
-  default = "nginx_vlm"
-  type    = string
+variable "container_network" {
+  type= object{
+    name= string
+    driver= string
+  }
+  default={
+    name= "my_network4nginx"
+    driver="bridge"
+  }
 }
