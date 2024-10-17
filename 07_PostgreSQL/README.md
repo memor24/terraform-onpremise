@@ -1,7 +1,6 @@
-# description tbu
-###user for read/write access, owner for bu/dr, schema, etc
+# PostgreSQL infrastructure
 
-###to create 2 postgres db instances on a docker network infrastructure using terraform:
+##To creae 2 postgres db instances on a docker network locally using terraform:
 
 ```
 terraform init
