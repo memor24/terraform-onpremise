@@ -7,6 +7,7 @@ resource "docker_network" "prometh_network" {
 resource "docker_container" "prometh_container" {
   name  = "prometheus_container"
   image = "prom/prometheus:latest"
+  keep_locally = "false"
   #port binding
   ports {
     internal = 9090
