@@ -9,6 +9,7 @@ resource "docker_network" "grafana_network" {
 resource "docker_container" "grafana_container" {
     name= "grafana_container"
     image=  "grafana/grafana:latest"
+    keep_locally = "false"
       
     #define ports
     ports {
