@@ -1,5 +1,4 @@
 
-#container volume variables
 variable "container_name" {
   default = "nginx_cntnr"
   type    = string
