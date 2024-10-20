@@ -1,6 +1,6 @@
 
 
-##########main:
+########## main:
 #creating a docker network
 resource "docker_network" "grafana_network" {
     name= "grafana_network"
