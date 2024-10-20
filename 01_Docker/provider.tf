@@ -2,12 +2,14 @@ terraform {
   required_providers {
     docker = {
       source  = "kreuzwerker/docker"
-      version = "> 3.0" 
+      version = "> 3.0"
     }
   }
 }
 
 provider "docker" {
   host = "unix:///var/run/docker.sock" #to run docker daemon for local access by terraform
-  #or tcp://localhost:2376 #plus config: to access remotely also
+  
+  #for tcp://localhost:2376 access
+  #need to config docker daemon to access remotely also
 }

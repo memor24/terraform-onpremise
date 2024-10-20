@@ -1,14 +1,21 @@
 #creates a (sample nginx) image from dockerhub
 # equivalent cmd: 'docker pull nginx:latest'
-resource "docker_image" "nginx_image" {
-  name         = "nginx/nginx:latest"
-  keep_locally = "false"
+#need to define the image seperately to be managed by terraform
+# this is how images are created in kreuzwerker/docker
+data "docker_registry_image" "sample_image" {
+  name = "nginx/nginx:latest"
+  #name= "grafana/grafana/latest"
 }
+resource "docker_image" "sample_image" {
+  name          = data.docker_registry_image.sample_image.name
+  pull_triggers = [data.docker_registry_image.sample_image.sha256_digest]
+} 
 
 #creates the nginx container using the created image
 resource "docker_container" "nginx_container" {
   name  = var.container_name
-  image = "docker_image.nginx_image.image_id"
+  image = docker_image.sample_image.name
+  #ports binding
   ports {
     internal = 80
     external = 8080 #nginx service on the docker network
@@ -33,9 +40,9 @@ resource "docker_network" "private_network" {
 
 ###outputs:
 output "nginx_url" {
-  value = "http://localhost:8080"
+  value = "http://localhost:8080" #configure docker daemon first
 }
 
 output "container_ip" {
-  value = "docker_container.nginx_container.network_data[0].ip_address"
+  value = docker_container.nginx_container.network_data[0].ip_address
 }
