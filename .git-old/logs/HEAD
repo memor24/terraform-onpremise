@@ -1,0 +1,123 @@
+0000000000000000000000000000000000000000 cee2fe6c088917cdd0eba94023f94909b10b59c2 memor24linux <myemail@example.com> 1728383571 -0600	clone: from github.com:memor24/terraform-onpremise.git
+cee2fe6c088917cdd0eba94023f94909b10b59c2 cee2fe6c088917cdd0eba94023f94909b10b59c2 memor24linux <myemail@example.com> 1728383816 -0600	checkout: moving from main to feature/moni_infra
+cee2fe6c088917cdd0eba94023f94909b10b59c2 9c5d8f99bfb5d59d6311491887d35bcd211bfb99 memor24linux <myemail@example.com> 1728389291 -0600	commit: created monitoring infrastructure with prometheus & grafana on a docker network
+9c5d8f99bfb5d59d6311491887d35bcd211bfb99 cee2fe6c088917cdd0eba94023f94909b10b59c2 memor24linux <myemail@example.com> 1728389344 -0600	checkout: moving from feature/moni_infra to main
+cee2fe6c088917cdd0eba94023f94909b10b59c2 9c5d8f99bfb5d59d6311491887d35bcd211bfb99 memor24linux <myemail@example.com> 1728389353 -0600	merge feature/moni_infra: Fast-forward
+9c5d8f99bfb5d59d6311491887d35bcd211bfb99 4fe83274c721f7b9b80a2d6f3d300ca20b95aaec memor24linux <myemail@example.com> 1728453501 -0600	commit: git -u OR --set-upstream main
+4fe83274c721f7b9b80a2d6f3d300ca20b95aaec 9c5d8f99bfb5d59d6311491887d35bcd211bfb99 memor24linux <myemail@example.com> 1728453585 -0600	checkout: moving from main to feature/moni_infra
+9c5d8f99bfb5d59d6311491887d35bcd211bfb99 2c1a8d7f9ebc1284e1e3eaff517a49bcbb2c3359 memor24linux <myemail@example.com> 1728453654 -0600	commit: git push -u OR -set-upstream origin main
+2c1a8d7f9ebc1284e1e3eaff517a49bcbb2c3359 4fe83274c721f7b9b80a2d6f3d300ca20b95aaec memor24linux <myemail@example.com> 1728453663 -0600	checkout: moving from feature/moni_infra to main
+4fe83274c721f7b9b80a2d6f3d300ca20b95aaec 2ed7ba26b6682d1881228ef0744df073db295714 memor24linux <myemail@example.com> 1728453676 -0600	merge feature/moni_infra: Merge made by the 'ort' strategy.
+2ed7ba26b6682d1881228ef0744df073db295714 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728453744 -0600	pull origin main: Merge made by the 'ort' strategy.
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 2c1a8d7f9ebc1284e1e3eaff517a49bcbb2c3359 memor24linux <myemail@example.com> 1728811251 +0330	checkout: moving from main to feature/moni_infra
+2c1a8d7f9ebc1284e1e3eaff517a49bcbb2c3359 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728811263 +0330	merge main: Fast-forward
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728811277 +0330	checkout: moving from feature/moni_infra to main
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728811329 +0330	checkout: moving from main to feature/moni_infra
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 0000000000000000000000000000000000000000 memor24linux <myemail@example.com> 1728811396 +0330	Branch: renamed refs/heads/feature/moni_infra to refs/heads/dev
+0000000000000000000000000000000000000000 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728811396 +0330	Branch: renamed refs/heads/feature/moni_infra to refs/heads/dev
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 c5038f3e94456dc9499c3b2d3856b1c5c0e8884b memor24linux <myemail@example.com> 1728811454 +0330	commit: new updates
+c5038f3e94456dc9499c3b2d3856b1c5c0e8884b 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728811463 +0330	checkout: moving from dev to main
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 c5038f3e94456dc9499c3b2d3856b1c5c0e8884b memor24linux <myemail@example.com> 1728811484 +0330	checkout: moving from main to dev
+c5038f3e94456dc9499c3b2d3856b1c5c0e8884b 665c86181b9bb0dc0d83c1420e5fd7d1eca686ee memor24linux <myemail@example.com> 1728812241 +0330	commit: planning
+665c86181b9bb0dc0d83c1420e5fd7d1eca686ee 6f7ef5c77875b1387a7438cd6cca4f7debdb1185 memor24linux <myemail@example.com> 1728812280 +0330	checkout: moving from dev to main
+6f7ef5c77875b1387a7438cd6cca4f7debdb1185 665c86181b9bb0dc0d83c1420e5fd7d1eca686ee memor24linux <myemail@example.com> 1728812302 +0330	merge dev: Fast-forward
+665c86181b9bb0dc0d83c1420e5fd7d1eca686ee 665c86181b9bb0dc0d83c1420e5fd7d1eca686ee memor24linux <myemail@example.com> 1728812355 +0330	checkout: moving from main to dev
+665c86181b9bb0dc0d83c1420e5fd7d1eca686ee 45164bb8241c77d3c5b3d3982976bd8af5135f25 memor24linux <myemail@example.com> 1728812403 +0330	commit: plan1
+45164bb8241c77d3c5b3d3982976bd8af5135f25 665c86181b9bb0dc0d83c1420e5fd7d1eca686ee memor24linux <myemail@example.com> 1728812411 +0330	checkout: moving from dev to main
+665c86181b9bb0dc0d83c1420e5fd7d1eca686ee 45164bb8241c77d3c5b3d3982976bd8af5135f25 memor24linux <myemail@example.com> 1728812426 +0330	merge dev: Fast-forward
+45164bb8241c77d3c5b3d3982976bd8af5135f25 1bfd83840fddee26ed1279a7820ca30eb61feff0 memor24linux <myemail@example.com> 1728819753 +0330	commit: updated Docker .tf files
+1bfd83840fddee26ed1279a7820ca30eb61feff0 45164bb8241c77d3c5b3d3982976bd8af5135f25 memor24linux <myemail@example.com> 1728819762 +0330	checkout: moving from main to dev
+45164bb8241c77d3c5b3d3982976bd8af5135f25 1bfd83840fddee26ed1279a7820ca30eb61feff0 memor24linux <myemail@example.com> 1728819768 +0330	merge main: Fast-forward
+1bfd83840fddee26ed1279a7820ca30eb61feff0 bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728820361 +0330	commit: update docker .tf files
+bf659c0212997515f941ea2e9dda2ac8beae7b3a 1bfd83840fddee26ed1279a7820ca30eb61feff0 memor24linux <myemail@example.com> 1728820369 +0330	checkout: moving from dev to main
+1bfd83840fddee26ed1279a7820ca30eb61feff0 bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728820394 +0330	merge dev: Fast-forward
+bf659c0212997515f941ea2e9dda2ac8beae7b3a bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728850294 +0330	checkout: moving from main to dev
+bf659c0212997515f941ea2e9dda2ac8beae7b3a bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728850371 +0330	checkout: moving from dev to main
+bf659c0212997515f941ea2e9dda2ac8beae7b3a bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728850422 +0330	checkout: moving from main to dev
+bf659c0212997515f941ea2e9dda2ac8beae7b3a bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728850443 +0330	checkout: moving from dev to main
+bf659c0212997515f941ea2e9dda2ac8beae7b3a bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728850585 +0330	checkout: moving from main to dev
+bf659c0212997515f941ea2e9dda2ac8beae7b3a 24d8cb308d02f80963506d97bea8271de531e0fd memor24linux <myemail@example.com> 1728853662 +0330	commit: updated blueprints of all
+24d8cb308d02f80963506d97bea8271de531e0fd bf659c0212997515f941ea2e9dda2ac8beae7b3a memor24linux <myemail@example.com> 1728853677 +0330	checkout: moving from dev to main
+bf659c0212997515f941ea2e9dda2ac8beae7b3a 24d8cb308d02f80963506d97bea8271de531e0fd memor24linux <myemail@example.com> 1728853695 +0330	merge dev: Fast-forward
+24d8cb308d02f80963506d97bea8271de531e0fd 24d8cb308d02f80963506d97bea8271de531e0fd memor24linux <myemail@example.com> 1728853719 +0330	checkout: moving from main to dev
+24d8cb308d02f80963506d97bea8271de531e0fd 09b90a9020f78ec45b9f05928e9c05aa0bf750d6 memor24linux <myemail@example.com> 1728853772 +0330	commit: test
+09b90a9020f78ec45b9f05928e9c05aa0bf750d6 24d8cb308d02f80963506d97bea8271de531e0fd memor24linux <myemail@example.com> 1728853782 +0330	checkout: moving from dev to main
+24d8cb308d02f80963506d97bea8271de531e0fd 09b90a9020f78ec45b9f05928e9c05aa0bf750d6 memor24linux <myemail@example.com> 1728853806 +0330	merge dev: Fast-forward
+09b90a9020f78ec45b9f05928e9c05aa0bf750d6 255c3052c7603ba9d3a85619699cdefdd715f5d1 memor24linux <myemail@example.com> 1728853958 +0330	pull origin main: Fast-forward
+255c3052c7603ba9d3a85619699cdefdd715f5d1 09b90a9020f78ec45b9f05928e9c05aa0bf750d6 memor24linux <myemail@example.com> 1728853996 +0330	checkout: moving from main to dev
+09b90a9020f78ec45b9f05928e9c05aa0bf750d6 255c3052c7603ba9d3a85619699cdefdd715f5d1 memor24linux <myemail@example.com> 1728854003 +0330	merge main: Fast-forward
+255c3052c7603ba9d3a85619699cdefdd715f5d1 8f87c58e837abfdf9f2f87cb575864fb8bbf7129 memor24linux <myemail@example.com> 1728854121 +0330	commit: resolved merge conflict
+8f87c58e837abfdf9f2f87cb575864fb8bbf7129 255c3052c7603ba9d3a85619699cdefdd715f5d1 memor24linux <myemail@example.com> 1728854128 +0330	checkout: moving from dev to main
+255c3052c7603ba9d3a85619699cdefdd715f5d1 8f87c58e837abfdf9f2f87cb575864fb8bbf7129 memor24linux <myemail@example.com> 1728854137 +0330	merge dev: Fast-forward
+8f87c58e837abfdf9f2f87cb575864fb8bbf7129 8f87c58e837abfdf9f2f87cb575864fb8bbf7129 memor24linux <myemail@example.com> 1728854252 +0330	checkout: moving from main to dev
+8f87c58e837abfdf9f2f87cb575864fb8bbf7129 906a46a840388ca05dd03241e005a2c7ced8c783 memor24linux <myemail@example.com> 1728854496 +0330	commit: reorganized
+906a46a840388ca05dd03241e005a2c7ced8c783 8f87c58e837abfdf9f2f87cb575864fb8bbf7129 memor24linux <myemail@example.com> 1728854507 +0330	checkout: moving from dev to main
+8f87c58e837abfdf9f2f87cb575864fb8bbf7129 906a46a840388ca05dd03241e005a2c7ced8c783 memor24linux <myemail@example.com> 1728854520 +0330	merge dev: Fast-forward
+906a46a840388ca05dd03241e005a2c7ced8c783 906a46a840388ca05dd03241e005a2c7ced8c783 memor24linux <myemail@example.com> 1728854550 +0330	checkout: moving from main to dev
+906a46a840388ca05dd03241e005a2c7ced8c783 f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 memor24linux <myemail@example.com> 1728854602 +0330	commit: reorganized
+f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 906a46a840388ca05dd03241e005a2c7ced8c783 memor24linux <myemail@example.com> 1728854608 +0330	checkout: moving from dev to main
+906a46a840388ca05dd03241e005a2c7ced8c783 f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 memor24linux <myemail@example.com> 1728854624 +0330	merge dev: Fast-forward
+f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 memor24linux <myemail@example.com> 1728854875 +0330	checkout: moving from main to dev
+f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 dcdc03e940b34a6564acdcb8208d371bbc6b3de8 memor24linux <myemail@example.com> 1728854922 +0330	commit: reorg-tbu
+dcdc03e940b34a6564acdcb8208d371bbc6b3de8 f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 memor24linux <myemail@example.com> 1728854930 +0330	checkout: moving from dev to main
+f85f24e3520679c5e6d280d8ab9e279ef86dbaf3 dcdc03e940b34a6564acdcb8208d371bbc6b3de8 memor24linux <myemail@example.com> 1728854938 +0330	merge dev: Fast-forward
+dcdc03e940b34a6564acdcb8208d371bbc6b3de8 dcdc03e940b34a6564acdcb8208d371bbc6b3de8 memor24linux <myemail@example.com> 1728900570 +0330	checkout: moving from main to main
+dcdc03e940b34a6564acdcb8208d371bbc6b3de8 dcdc03e940b34a6564acdcb8208d371bbc6b3de8 memor24linux <myemail@example.com> 1728900574 +0330	checkout: moving from main to dev
+dcdc03e940b34a6564acdcb8208d371bbc6b3de8 0993b4a0c42a33268ed5a9ee82f53771ce7a7aab memor24linux <myemail@example.com> 1728903098 +0330	commit: updates to postgres
+0993b4a0c42a33268ed5a9ee82f53771ce7a7aab dcdc03e940b34a6564acdcb8208d371bbc6b3de8 memor24linux <myemail@example.com> 1728903376 +0330	checkout: moving from dev to main
+dcdc03e940b34a6564acdcb8208d371bbc6b3de8 23ee54f24f24e06762ed800d0e89b3a52ab01701 memor24linux <myemail@example.com> 1728903400 +0330	pull origin main: Fast-forward
+23ee54f24f24e06762ed800d0e89b3a52ab01701 c05b8b729533a85511e735b750c7d19bbb5aaf27 memor24linux <myemail@example.com> 1728903508 +0330	merge dev: Merge made by the 'ort' strategy.
+c05b8b729533a85511e735b750c7d19bbb5aaf27 0993b4a0c42a33268ed5a9ee82f53771ce7a7aab memor24linux <myemail@example.com> 1728905048 +0330	checkout: moving from main to dev
+0993b4a0c42a33268ed5a9ee82f53771ce7a7aab 70eea8dc8b9acf958b9cbad597b6ed2bd62563bf memor24linux <myemail@example.com> 1728905169 +0330	commit: updated nginx
+70eea8dc8b9acf958b9cbad597b6ed2bd62563bf c05b8b729533a85511e735b750c7d19bbb5aaf27 memor24linux <myemail@example.com> 1728905181 +0330	checkout: moving from dev to main
+c05b8b729533a85511e735b750c7d19bbb5aaf27 1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 memor24linux <myemail@example.com> 1728905195 +0330	merge dev: Merge made by the 'ort' strategy.
+1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 70eea8dc8b9acf958b9cbad597b6ed2bd62563bf memor24linux <myemail@example.com> 1728905300 +0330	checkout: moving from main to dev
+70eea8dc8b9acf958b9cbad597b6ed2bd62563bf 1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 memor24linux <myemail@example.com> 1728905309 +0330	merge main: Fast-forward
+1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 memor24linux <myemail@example.com> 1728905348 +0330	checkout: moving from dev to main
+1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 ad4521f8efc297de0a934b62739caa2dd733440b memor24linux <myemail@example.com> 1728905387 +0330	commit: quick test
+ad4521f8efc297de0a934b62739caa2dd733440b 1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 memor24linux <myemail@example.com> 1728970915 +0330	checkout: moving from main to dev
+1af7472d80704d6b30bf6f70b8ed251dfadc2ad6 ad4521f8efc297de0a934b62739caa2dd733440b memor24linux <myemail@example.com> 1728970925 +0330	merge main: Fast-forward
+ad4521f8efc297de0a934b62739caa2dd733440b ad4521f8efc297de0a934b62739caa2dd733440b memor24linux <myemail@example.com> 1728970953 +0330	checkout: moving from dev to main
+ad4521f8efc297de0a934b62739caa2dd733440b a4f1765416fbe0eec2cbf95603641f01da7bf3b6 memor24linux <myemail@example.com> 1728970992 +0330	commit: resolved errors for 07_postgres
+a4f1765416fbe0eec2cbf95603641f01da7bf3b6 ad4521f8efc297de0a934b62739caa2dd733440b memor24linux <myemail@example.com> 1728971006 +0330	checkout: moving from main to dev
+ad4521f8efc297de0a934b62739caa2dd733440b a4f1765416fbe0eec2cbf95603641f01da7bf3b6 memor24linux <myemail@example.com> 1728971034 +0330	merge main: Fast-forward
+a4f1765416fbe0eec2cbf95603641f01da7bf3b6 a4f1765416fbe0eec2cbf95603641f01da7bf3b6 memor24linux <myemail@example.com> 1728971078 +0330	checkout: moving from dev to main
+a4f1765416fbe0eec2cbf95603641f01da7bf3b6 a4f1765416fbe0eec2cbf95603641f01da7bf3b6 memor24linux <myemail@example.com> 1728971105 +0330	checkout: moving from main to dev
+a4f1765416fbe0eec2cbf95603641f01da7bf3b6 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729028222 +0330	commit: postgres updates
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 a4f1765416fbe0eec2cbf95603641f01da7bf3b6 memor24linux <myemail@example.com> 1729028242 +0330	checkout: moving from dev to main
+a4f1765416fbe0eec2cbf95603641f01da7bf3b6 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729028252 +0330	merge dev: Fast-forward
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729028379 +0330	checkout: moving from main to dev
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729028417 +0330	checkout: moving from dev to main
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729097623 +0330	checkout: moving from main to main
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729097627 +0330	checkout: moving from main to dev
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729097648 +0330	checkout: moving from dev to main
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729097662 +0330	checkout: moving from main to dev
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 6332e2dc96117bd353a977732804436b621295d7 memor24linux <myemail@example.com> 1729107548 +0330	commit: updated postgres config bash
+6332e2dc96117bd353a977732804436b621295d7 e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729107557 +0330	checkout: moving from dev to main
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 6332e2dc96117bd353a977732804436b621295d7 memor24linux <myemail@example.com> 1729107581 +0330	checkout: moving from main to dev
+6332e2dc96117bd353a977732804436b621295d7 59172cd7611100335486bb86bfa28448776bddce memor24linux <myemail@example.com> 1729107657 +0330	commit: updated postgres config bash
+59172cd7611100335486bb86bfa28448776bddce e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 memor24linux <myemail@example.com> 1729107665 +0330	checkout: moving from dev to main
+e0f6bb23b072f23c47f4fb89afda51cc00a47ab2 59172cd7611100335486bb86bfa28448776bddce memor24linux <myemail@example.com> 1729107675 +0330	merge dev: Fast-forward
+59172cd7611100335486bb86bfa28448776bddce 59172cd7611100335486bb86bfa28448776bddce memor24linux <myemail@example.com> 1729108466 +0330	checkout: moving from main to dev
+59172cd7611100335486bb86bfa28448776bddce f62c1837953749bedac3f1c027d16862fda98763 memor24linux <myemail@example.com> 1729169294 +0330	commit: docker infra updates
+f62c1837953749bedac3f1c027d16862fda98763 59172cd7611100335486bb86bfa28448776bddce memor24linux <myemail@example.com> 1729169305 +0330	checkout: moving from dev to main
+59172cd7611100335486bb86bfa28448776bddce f62c1837953749bedac3f1c027d16862fda98763 memor24linux <myemail@example.com> 1729169314 +0330	merge dev: Fast-forward
+                                                                                                                                                                        f62c1837953749bedac3f1c027d16862fda98763 6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 memor24linux <myemail@example.com> 1729190019 +0330	commit: updated 02_grafana
+6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 f62c1837953749bedac3f1c027d16862fda98763 memor24linux <myemail@example.com> 1729190026 +0330	checkout: moving from dev to main
+f62c1837953749bedac3f1c027d16862fda98763 6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 memor24linux <myemail@example.com> 1729190039 +0330	merge dev: Fast-forward
+6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729191893 +0330	commit: updated 01_docker
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 memor24linux <myemail@example.com> 1729191915 +0330	checkout: moving from main to dev
+6a5f48ddbf258f4e5169442cfce8eb199b7e6f59 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729191924 +0330	merge main: Fast-forward
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729191934 +0330	checkout: moving from dev to main
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729191979 +0330	checkout: moving from main to main
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729191982 +0330	checkout: moving from main to dev
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 b944df1bfc79eeb8fe76c95468d4ac40fe034693 memor24linux <myemail@example.com> 1729192331 +0330	commit: tf fmt!
+b944df1bfc79eeb8fe76c95468d4ac40fe034693 eb4cf46486292d795df50c6786ddb41e5fe606e6 memor24linux <myemail@example.com> 1729192398 +0330	commit (amend): update to 01_docker
+eb4cf46486292d795df50c6786ddb41e5fe606e6 3371e1a153c2428fc353ddf8a0576a53b708e6d0 memor24linux <myemail@example.com> 1729192480 +0330	checkout: moving from dev to main
+3371e1a153c2428fc353ddf8a0576a53b708e6d0 eb4cf46486292d795df50c6786ddb41e5fe606e6 memor24linux <myemail@example.com> 1729192486 +0330	merge dev: Fast-forward
+eb4cf46486292d795df50c6786ddb41e5fe606e6 eb4cf46486292d795df50c6786ddb41e5fe606e6 memor24linux <myemail@example.com> 1729192616 +0330	checkout: moving from main to dev
+eb4cf46486292d795df50c6786ddb41e5fe606e6 07cb08ee6a5d7c610c30531ba60b00f4a0baf4c3 memor24linux <myemail@example.com> 1729192705 +0330	commit: updated 01_docker final
+07cb08ee6a5d7c610c30531ba60b00f4a0baf4c3 eb4cf46486292d795df50c6786ddb41e5fe606e6 memor24linux <myemail@example.com> 1729192735 +0330	checkout: moving from dev to main
+eb4cf46486292d795df50c6786ddb41e5fe606e6 07cb08ee6a5d7c610c30531ba60b00f4a0baf4c3 memor24linux <myemail@example.com> 1729192745 +0330	merge dev: Fast-forward
+07cb08ee6a5d7c610c30531ba60b00f4a0baf4c3 07cb08ee6a5d7c610c30531ba60b00f4a0baf4c3 memor24linux <myemail@example.com> 1729195648 +0330	checkout: moving from main to dev
+                                                                                                                                                    
