@@ -7,3 +7,11 @@ terraform {
     }
   }
 }
+
+# configuring the docker provider
+  provider "docker" {
+    host    = "unix:///var/run/docker.sock"
+  }
+
+# no provider available for prometheus! 
+# therefore provided and configured with the yaml

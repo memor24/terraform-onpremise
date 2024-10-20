@@ -3,11 +3,21 @@ resource "docker_network" "prometh_network" {
   name = "prometheus_network"
 }
 
+# creating the image seperately to make sure it is also managed by terraform
+# this is how images are created in kreuzwerker/docker
+data "docker_registry_image" "prometh_image" {
+  name = "prom/prometheus:latest"
+}
+resource "docker_image" "prometh_image" {
+  name          = data.docker_registry_image.prometh_image.name
+  pull_triggers = [data.docker_registry_image.prometh_image.sha256_digest]
+}
+
 #creating prometheus container
 resource "docker_container" "prometh_container" {
   name  = "prometheus_container"
-  image = "prom/prometheus:latest"
-  keep_locally = "false"
+  image = docker_image.prometh_image.name
+
   #port binding
   ports {
     internal = 9090
