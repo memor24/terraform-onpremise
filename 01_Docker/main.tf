@@ -2,13 +2,12 @@
 # equivalent cmd: 'docker pull nginx:latest'
 #need to define the image seperately to be managed by terraform
 # this is how images are created in kreuzwerker/docker
-data "docker_registry_image" "sample_image" {
-  name = "nginx/nginx:latest"
-  #name= "grafana/grafana/latest"
+data "docker_registry_image" "sth_image" {
+  name = "nginx:latest"
 }
 resource "docker_image" "sample_image" {
-  name          = data.docker_registry_image.sample_image.name
-  pull_triggers = [data.docker_registry_image.sample_image.sha256_digest]
+  name          = data.docker_registry_image.sth_image.name
+  pull_triggers = [data.docker_registry_image.sth_image.sha256_digest]
 } 
 
 #creates the nginx container using the created image
