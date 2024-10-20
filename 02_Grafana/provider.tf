@@ -12,6 +12,3 @@ terraform {
     }
   }
 }
-# provider "docker" {
-  
-# }
