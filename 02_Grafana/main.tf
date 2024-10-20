@@ -1,6 +1,5 @@
 
-
-########## main:
+## main:
 #creating a docker network
 resource "docker_network" "grafana_network" {
     name= "grafana_network"
@@ -29,12 +28,12 @@ resource "docker_container" "grafana_container" {
     restart ="always"
 }
 
-##########data sources:
+##data sources:
 data "grafana_cloud_ips" "test" {}
 
-##########variables:
+##variables:
 
-##########outputs:
+##outputs:
 output "grafana_url" {
 value = "http://localhost:3000"
 }

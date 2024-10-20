@@ -5,12 +5,13 @@ terraform {
     docker = {
       source  = "kreuzwerker/docker"
       version = ">= 3.0"
+      host = "unix:///var/run/docker.sock"
     }
     grafana = {
       source = "grafana/grafana"
     }
   }
 }
-provider "docker" {
-  host = "unix:///var/run/docker.sock"
-}
+# provider "docker" {
+  
+# }
