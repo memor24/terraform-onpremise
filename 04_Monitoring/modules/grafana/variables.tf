@@ -1,6 +1,6 @@
 variable grafana_port {
   type        = number
-  default     = 3001
+  default     = 3000
   description = "grafana port exposed as UI"
 }
 

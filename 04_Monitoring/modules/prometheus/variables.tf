@@ -1,6 +1,6 @@
 variable prometheus_port {
   type        = number
-  default     = 9091
+  default     = 9090
   description = "prometheus port exposed to stream metrics"
 }
 
