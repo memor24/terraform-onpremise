@@ -1,27 +1,49 @@
-terraform {
-  required_version = ">= 0.12"
 
-required_providers {
-     docker = {
-      source = "kreuzwerker/docker"
-     }
-}
+## main:
+#creating a docker network
+resource "docker_network" "graf_network" {
+  name = "my_grafana_network"
 }
 
-resource "docker_container" "grafana" {
-image= "grafana/grafana:latest"
-name= "grafana"
-restart= "always"
-ports {
-    internal=3000
-    external=var.grafana_port
+# creating the image seperately to make sure it is also managed by terraform
+# this is how images are created in kreuzwerker/docker
+data "docker_registry_image" "grafana_image" {
+  name = "grafana/grafana:latest"
 }
-network_advanced {
-    name=var.network_name
-}
-}
+resource "docker_image" "grafana_image" {
+  name          = data.docker_registry_image.grafana_image.name
+  pull_triggers = [data.docker_registry_image.grafana_image.sha256_digest]
+} 
 
-# instead of outputs.tf
-output grafana_url {
-  value       = "http://localhost.${grafana_port}"
+#create a grafana container
+resource "docker_container" "graf_container" {
+  name         = "grafana_container"
+  image        = docker_image.grafana_image.name
+
+  #define ports
+  ports {
+    internal = 3000
+    external = 3000
   }
+  #mount volumes
+  volumes {
+    host_path      = "/var/lib/grafana"
+    container_path = "/var/lib/grafana" 
+  }
+  #connect the container to the network
+  networks_advanced {
+    name = docker_network.graf_network.name
+  }
+  #container auto restart policy
+  restart = "always"
+}
+
+##data sources:
+data "grafana_cloud_ips" "test" {}
+
+##variables:
+
+##outputs:
+output "grafana_url" {
+  value = "http://localhost:3000"
+}
