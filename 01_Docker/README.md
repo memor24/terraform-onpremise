@@ -1,4 +1,4 @@
-# Docker Resources Provision with Terraform
+# Provision of Docker with Terraform
 
 This will create Docker resources to run a container on a local network.
 
@@ -66,6 +66,7 @@ resource null_resource name {
 }
 ```
 Then, create all of the resources with Terraform:
+
 For preparation:
 ```
 terraform fmt
