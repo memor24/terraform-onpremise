@@ -1,6 +1,6 @@
 #creating docker network
-resource "docker_network" "prometh_network" {
-  name = "prometheus_network"
+resource "docker_network" "monitoring_network" {
+  name = var.monitoring_network
 }
 
 # creating the image seperately to make sure it is also managed by terraform

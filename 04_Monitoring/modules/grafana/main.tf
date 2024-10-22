@@ -2,8 +2,8 @@
 # Resources:
 
 #creating a docker network
-resource "docker_network" "graf_network" {
-  name = "my_grafana_network"
+resource "docker_network" "monitoring_network" {
+  name = var.monitoring_network
   driver="bridge"
 }
 
