@@ -1,4 +1,4 @@
-# Docker Resources Provider with Terraform
+# Docker Resources Provision with Terraform
 
 This will create Docker resources to run a container on a local network.
 
