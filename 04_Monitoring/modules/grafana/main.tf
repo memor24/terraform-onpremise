@@ -13,12 +13,12 @@ data "docker_registry_image" "grafana_image" {
 resource "docker_image" "grafana_image" {
   name          = data.docker_registry_image.grafana_image.name
   pull_triggers = [data.docker_registry_image.grafana_image.sha256_digest]
-} 
+}
 
 #create a grafana container
 resource "docker_container" "graf_container" {
-  name         = "grafana_container"
-  image        = docker_image.grafana_image.name
+  name  = "grafana_container"
+  image = docker_image.grafana_image.name
 
   #define ports
   ports {
@@ -28,7 +28,7 @@ resource "docker_container" "graf_container" {
   #mount volumes
   volumes {
     host_path      = "/var/lib/grafana"
-    container_path = "/var/lib/grafana" 
+    container_path = "/var/lib/grafana"
   }
   #connect the container to the network
   networks_advanced {
