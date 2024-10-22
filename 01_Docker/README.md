@@ -12,7 +12,8 @@ provider "docker" {
   host = "unix:///var/run/docker.sock"   #docker daemon for local access by terraform
 }
 ```
-*Please see the note below for remote provisioning by Terraform.
+PS: Please see the note section below for remote provisioning by Terraform.
+------------------------------------------------------------------------------
 
 Create all of the resources with Terraform:
 For preparation:
@@ -68,18 +69,4 @@ resource null_resource name {
     command = "bash script"
   }
 }
-```
-Then, create all of the resources with Terraform:
-
-For preparation:
-```
-terraform fmt
-terraform init
-terraform validate
-terraform plan
-```
-For creation or removal:
-```
-terraform apply
-terraform destroy
 ```
