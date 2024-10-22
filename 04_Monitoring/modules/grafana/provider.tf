@@ -6,7 +6,7 @@ terraform {
     docker = {
       source  = "kreuzwerker/docker"
       version = ">= 3.0"
-  
+
     }
     grafana = {
       source = "grafana/grafana"
@@ -14,6 +14,6 @@ terraform {
   }
 }
 #configuring the docker provider
- provider "docker" {
-    host    = "unix:///var/run/docker.sock"
-  }
+provider "docker" {
+  host = "unix:///var/run/docker.sock"
+}

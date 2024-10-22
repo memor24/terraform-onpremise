@@ -1,8 +1,10 @@
 
-## main:
+# Resources:
+
 #creating a docker network
-resource "docker_network" "graf_network" {
-  name = "my_grafana_network"
+resource "docker_network" "monitoring_network" {
+  name = var.monitoring_network
+  driver="bridge"
 }
 
 # creating the image seperately to make sure it is also managed by terraform
@@ -13,12 +15,12 @@ data "docker_registry_image" "grafana_image" {
 resource "docker_image" "grafana_image" {
   name          = data.docker_registry_image.grafana_image.name
   pull_triggers = [data.docker_registry_image.grafana_image.sha256_digest]
-} 
+}
 
 #create a grafana container
 resource "docker_container" "graf_container" {
-  name         = "grafana_container"
-  image        = docker_image.grafana_image.name
+  name  = "grafana_container"
+  image = docker_image.grafana_image.name
 
   #define ports
   ports {
@@ -28,7 +30,7 @@ resource "docker_container" "graf_container" {
   #mount volumes
   volumes {
     host_path      = "/var/lib/grafana"
-    container_path = "/var/lib/grafana" 
+    container_path = "/var/lib/grafana"
   }
   #connect the container to the network
   networks_advanced {
@@ -38,12 +40,12 @@ resource "docker_container" "graf_container" {
   restart = "always"
 }
 
-##data sources:
-data "grafana_cloud_ips" "test" {}
 
-##variables:
-
-##outputs:
+# Outputs:
 output "grafana_url" {
   value = "http://localhost:3000"
 }
+
+
+# ##data sources:
+# data "grafana_cloud_ips" "test" {}
