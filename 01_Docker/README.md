@@ -13,6 +13,7 @@ provider "docker" {
 }
 ```
 PS: Please see the note section below for remote provisioning by Terraform.
+
 ------------------------------------------------------------------------------
 
 Create all of the resources with Terraform:
