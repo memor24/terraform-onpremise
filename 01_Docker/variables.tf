@@ -4,7 +4,7 @@ variable "container_name" {
   type    = string
 }
 variable "container_path" {
-  default = "/usr/share/nginx"
+  default = "/usr/share/nginx/html"
   type    = string
 }
 
