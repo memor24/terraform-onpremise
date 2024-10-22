@@ -10,7 +10,7 @@ terraform {
 
 #monitoring network on docker(local/compose)
 resource "docker_network" "monitoring_network" {
-  name = "monitoring_network"
+  name = var.monitoring_network
 }
 
 module "grafana" {
