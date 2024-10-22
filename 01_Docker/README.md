@@ -12,9 +12,6 @@ provider "docker" {
   host = "unix:///var/run/docker.sock"   #docker daemon for local access by terraform
 }
 ```
-PS: Please see the note section below for remote provisioning by Terraform.
-
-------------------------------------------------------------------------------
 
 Create all of the resources with Terraform:
 For preparation:
@@ -30,6 +27,9 @@ terraform apply
 terraform destroy
 ```
 
+PS: Please see the note section below for remote provisioning by Terraform.
+
+------------------------------------------------------------------------------
 ## Note:
 ### Provider Configuration (Remote)
 
