@@ -13,23 +13,26 @@ provider "docker" {
 }
 ```
 Create all of the resources with Terraform:
-'''
+For preparation:
+```
 terraform fmt
 terraform init
 terraform validate
 terraform plan
-'''
-'''
+```
+For creation and removal:
+```
 terraform apply
 terraform destroy
 ```
-
-To run Docker daemon for remote access by Terraform, the docker daemon need to be configured prior to applying Terraform:
+### Provider Configuration (Remote)
 
 ```
 provider "docker" {  
   host = "http://localhost:2376"   #docker daemon for remote access by terraform
 }
+```
+To run Docker daemon for remote access by Terraform, the docker daemon need to be configured prior to applying Terraform:
 ```
 sudo nano /etc/docker/daemon.json
 ```
@@ -38,16 +41,16 @@ and add this to daemon.json:
   {
    "hosts": ["http://localhost:2376"]
   }
-  ```
+```
  to check the integrity of the JSON file, run:
 ```
  cat /etc/docker/daemon.json | jq .
 ```
-Then:
+Then restart the docker service to make changes effective:
 ```
  sudo systemctl restart docker
  ```
- And if needed, set up permissions:
+ And if needed, update permissions:
 ```
  sudo usermod -aG docker $USER
  newgrp docker
@@ -64,21 +67,14 @@ resource null_resource name {
 ```
 Then, create all of the resources with Terraform:
 For preparation:
-'''
-#Format your Terraform configuration files for consistency
+```
 terraform fmt
-
-#Initialize the project and download necessary provider plugins
 terraform init
-
-#Validate the configuration to ensure it's syntactically correct
 terraform validate
-
-#Preview the changes Terraform will make without actually applying them
 terraform plan
-'''
+```
 For creation or removal:
-'''
+```
 terraform apply
 terraform destroy
 ```
