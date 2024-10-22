@@ -1,8 +1,10 @@
 
-## main:
+# Resources:
+
 #creating a docker network
 resource "docker_network" "graf_network" {
   name = "my_grafana_network"
+  driver="bridge"
 }
 
 # creating the image seperately to make sure it is also managed by terraform
@@ -38,12 +40,12 @@ resource "docker_container" "graf_container" {
   restart = "always"
 }
 
-##data sources:
-data "grafana_cloud_ips" "test" {}
 
-##variables:
-
-##outputs:
+# Outputs:
 output "grafana_url" {
   value = "http://localhost:3000"
 }
+
+
+# ##data sources:
+# data "grafana_cloud_ips" "test" {}
