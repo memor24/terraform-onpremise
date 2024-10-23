@@ -1,13 +1,9 @@
 
 # Resources:
 
-#creating a docker network
-resource "docker_network" "monitoring_network" {
-  name = var.monitoring_network
-  driver="bridge"
-}
+#creating a docker network not needed here
+#grafana module is connected to the monitoring network via 04_Monitoring/main.tf
 
-# creating the image seperately to make sure it is also managed by terraform
 # this is how images are created in kreuzwerker/docker
 data "docker_registry_image" "grafana_image" {
   name = "grafana/grafana:latest"
@@ -16,6 +12,7 @@ resource "docker_image" "grafana_image" {
   name          = data.docker_registry_image.grafana_image.name
   pull_triggers = [data.docker_registry_image.grafana_image.sha256_digest]
 }
+# created the image seperately to make sure it is also managed by terraform
 
 #create a grafana container
 resource "docker_container" "graf_container" {
@@ -34,7 +31,7 @@ resource "docker_container" "graf_container" {
   }
   #connect the container to the network
   networks_advanced {
-    name = docker_network.graf_network.name
+    name = var.network_name
   }
   #container auto restart policy
   restart = "always"
@@ -45,7 +42,3 @@ resource "docker_container" "graf_container" {
 output "grafana_url" {
   value = "http://localhost:3000"
 }
-
-
-# ##data sources:
-# data "grafana_cloud_ips" "test" {}

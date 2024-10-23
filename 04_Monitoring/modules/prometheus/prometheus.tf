@@ -1,7 +1,7 @@
 #creating docker network
-resource "docker_network" "monitoring_network" {
-  name = var.monitoring_network
-}
+# resource "docker_network" "monitoring_network" {
+#   name = var.monitoring_network
+# }
 
 # creating the image seperately to make sure it is also managed by terraform
 # this is how images are created in kreuzwerker/docker
@@ -21,7 +21,7 @@ resource "docker_container" "prometh_container" {
   #port binding
   ports {
     internal = 9090
-    external = var.prom_port
+    external = 9090
   }
   #container volume for persistent prometheus data
   volumes {
@@ -30,17 +30,13 @@ resource "docker_container" "prometh_container" {
   }
   #attaching container to network
   networks_advanced {
-    name = docker_network.prometh_network.name
+    name = var.network_name
   }
   restart = "always"
 }
-########
-variable "prom_port" {
-  default = 9090
-  type    = number
-}
-##############
 
+
+# Output
 output "prometheus_url" {
-  value = "http://localhost:9090"
+  value = "http://localhost:9090/metrics"
 }
