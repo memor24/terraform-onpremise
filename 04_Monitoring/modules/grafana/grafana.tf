@@ -3,6 +3,7 @@
 
 #creating a docker network not needed here
 #grafana module is connected to the monitoring network via 04_Monitoring/main.tf
+#using variables in the modules
 
 # this is how images are created in kreuzwerker/docker
 data "docker_registry_image" "grafana_image" {

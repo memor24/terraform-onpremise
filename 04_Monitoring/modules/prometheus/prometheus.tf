@@ -1,7 +1,8 @@
 # Resources:
 
 #creating docker network not needed here
-#prometheus module is connected to monitoring network via 04_Monitoring/main.tf with variables
+#prometheus module is connected to monitoring network via 04_Monitoring/main.tf
+#using variables in the modules
 
 # this is how images are created in kreuzwerker/docker
 data "docker_registry_image" "prometh_image" {
