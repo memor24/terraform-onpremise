@@ -17,7 +17,8 @@ resource haproxy_defaults "new_defaults" {
     name="test"
     mode="http"
     httplog= true
-    httpslog= truetcplog= false
+    httpslog= true
+    tcplog= false
     client_timeout          = 10
     connect_timeout         = 10
     http_keep_alive_timeout = 10
