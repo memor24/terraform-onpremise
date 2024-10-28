@@ -14,6 +14,6 @@ provider "grafana" {
   auth = var.grafana_auth
 }
 
-variable "grafana_auth" {
+variable "grafana_auth" {     #store the actual values in terraform.tfvars or Vault
   default = "admin:admin"
 }
