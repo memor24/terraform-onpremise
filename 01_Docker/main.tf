@@ -37,7 +37,7 @@ resource "docker_container" "nginx_container" {
   restart = "always"
 }
 
-###outputs:
+### 4. outputs:
 output "nginx_url" {
   value = "http://localhost:8080"
 }
