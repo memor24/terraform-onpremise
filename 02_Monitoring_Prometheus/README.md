@@ -1,6 +1,8 @@
 ## Monitoring containers
 ### Prometheus
-A configured monitoring stack of modular prometheus & grafana is written for onpremise infrastructure use. To be scaled with Docker Swarm or Kubernetes.
+Prometheus is a time-series database and a great tool for monitoring containers and cloud native infrastructure. It can collect, store and query (PromQL) time-series data, besides alerting, service discovery, etc.
+
+A configured monitoring stack of modular prometheus & grafana is written as an onpremise local server. Could be scaled with Kubernetes.
 
 For preparation:
 ```
