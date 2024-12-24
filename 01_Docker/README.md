@@ -1,6 +1,6 @@
 # Provision of Docker with Terraform
 
-This will create Docker resources to run a container on a local network. It has also been tried and tested!
+This will create Docker resources to run a container on a local network.
 
 ## Local Docker Setup
 
