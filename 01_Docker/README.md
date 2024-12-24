@@ -1,5 +1,6 @@
 # Docker
-This will create Docker resources to run a container on a local network.
+This will create Docker resources to run a container on a local network. \
+The created container(s) can be scaled with Docker Swarm or Kubernetes.
 
 ## Local Docker Setup
 
