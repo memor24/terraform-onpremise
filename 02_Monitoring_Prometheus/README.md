@@ -1,5 +1,5 @@
-## Monitoring 
-
+## Monitoring containers
+### Prometheus
 A configured monitoring stack of modular prometheus & grafana is written for onpremise infrastructure use. To be scaled with Docker Swarm or Kubernetes.
 
 For preparation:
