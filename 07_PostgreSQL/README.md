@@ -1,6 +1,5 @@
-# PostgreSQL infrastructure
-
-### To creae 2 postgres db instances on a docker network locally using terraform:
+# PostgreSQL
+Postgres instances are configured and created with Terraform, ready to be scaled with Docker Swarm or Kubernetes.
 
 ```
 terraform init
