@@ -1,10 +1,9 @@
-# Provision of Docker with Terraform
-
+# Docker
 This will create Docker resources to run a container on a local network.
 
 ## Local Docker Setup
 
-If you want to use Terraform with Docker on your local machine, the Docker provider needs to be configured to access the local Docker daemon using the Unix socket.
+To use Terraform with Docker on your local machine, the Docker provider needs to be configured to access the local Docker daemon using the Unix socket.
 
 ### Provider Configuration (Local)
 ```
@@ -13,7 +12,6 @@ provider "docker" {
 }
 ```
 
-Create all of the resources with Terraform:
 For preparation:
 ```
 terraform fmt
