@@ -8,10 +8,10 @@ terraform {
 }
 
 resource "virtualbox_vm" "new_vboxvm" {
-  name      = "jenkins_server"
+  name      = "zabbix_server_frontend_agent2"
   image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
-  cpus      = 2
-  memory    = "512 mib"
+  cpus      = var.cpu
+  memory    = var.ram 
   user_data = file("${path.module}/user_data")
 
   network_adapter {
@@ -34,16 +34,16 @@ resource "null_resource" "sshconnection" {
   connection {
     type     = "ssh"
     user     = "root"
-    password = var.password
+    password = var.password # defined in tfvars
     host     = var.host
   }
 }
 
 provisioner "file" {
   source      = "vm_ip"
-  destination = "hosts.txt"
+  destination = "hosts.txt" # on the vm, connected as root
 }
 # run the ansible to install and run the monitoring stack
 provisioner "local-exec" {
-  command = "ansible-playbook -i hosts.txt ./zabbix/playbook.yml"
+  command = "ansible-playbook -i /root/hosts.txt ./zabbix/playbook.yml"
 }
