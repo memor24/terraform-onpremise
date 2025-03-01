@@ -1,0 +1,21 @@
+---
+- name: Download Zabbix Release Package
+  get_url:
+    url: https://repo.zabbix.com/zabbix/7.0/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.0+debian12_all.deb
+    dest: /tmp/zabbix-release_latest_7.0+debian12_all.deb
+
+- name: Install Zabbix Release Package
+  apt:
+    deb: /tmp/zabbix-release_latest_7.0+debian12_all.deb
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install Zabbix Agent 2 Plugins
+  apt:
+    name:
+      - zabbix-agent2-plugin-mongodb
+      - zabbix-agent2-plugin-mssql
+      - zabbix-agent2-plugin-postgresql
+    state: present

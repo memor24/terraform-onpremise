@@ -1,0 +1,9 @@
+- name: Restart Zabbix Services
+  systemd:
+    name: "{{ item }}"
+    state: restarted
+  loop:
+    - zabbix-server
+    - zabbix-agent2
+    - nginx
+    - "{{ php_fpm_service }}"

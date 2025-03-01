@@ -1,0 +1,56 @@
+---
+- name: Install Zabbix Server, Frontend, and Agent2
+  apt:
+    name:
+      - zabbix-server-pgsql
+      - zabbix-frontend-php
+      - php8.2-pgsql
+      - zabbix-nginx-conf
+      - zabbix-sql-scripts
+      - zabbix-agent2
+    state: present
+
+- name: Create Zabbix Database User (runs on db host)
+  become: true
+  become_user: postgres
+  postgresql_user:
+    user: "{{ zabbix_db_user }}"
+    password: "{{ zabbix_db_password }}"
+    state: present
+  delegate_to: "{{ zabbix_db_host }}"
+
+- name: Create Zabbix Database (runs on db host)
+  become: true
+  become_user: postgres
+  postgresql_db:
+    name: "{{ zabbix_db_name }}"
+    owner: "{{ zabbix_db_user }}"
+    state: present
+  delegate_to: "{{ zabbix_db_host }}"
+
+- name: Import Zabbix Database Schema
+  shell: "zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql {{ zabbix_db_name }}"
+  environment:
+    PGPASSWORD: "{{ zabbix_db_password }}"
+
+- name: Configure Zabbix Server Database Password
+  lineinfile:
+    path: /etc/zabbix/zabbix_server.conf
+    regexp: '^DBPassword='
+    line: "DBPassword={{ zabbix_db_password }}"
+  notify: Restart Zabbix Services
+
+- name: Enable Zabbix Services
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+  loop:
+    - zabbix-server
+    - zabbix-agent2
+    - nginx
+    - "{{ php_fpm_service }}"
+
+- name: Print Zabbix UI URL
+  debug:
+    msg: "Zabbix UI URL: http://{{ ansible_host }}"
+    
