@@ -29,7 +29,7 @@ resource "vsphere_virtual_machine" "vm" {
   datastore_id=data.vsphere_datastore.ds.id
   num_cpus=var.num_cpu
   memory=var.ram
-  guest_id="LinuxGrafana"
+  guest_id="zabbix_server_agent2"
   network_interface{
     network_id=data.vsphere_network.nw.id
   }
