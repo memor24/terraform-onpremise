@@ -45,5 +45,8 @@ provisioner "file" {
 }
 # run the ansible to install and run the monitoring stack
 provisioner "local-exec" {
-  command = "ansible-playbook -i /root/hosts.txt ./zabbix/playbook.yml"
+  inline=[
+  "ansible-playbook install_grafana.yml"
+  ]
+
 }

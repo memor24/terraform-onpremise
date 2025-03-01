@@ -67,6 +67,6 @@ provisioner "file" {
 # run ansible on the vm
 provisioner "local-exec" {
  inline=[
-  "ansible-playbook install_grafana.yml"
+   command = "ansible-playbook -i /root/hosts.txt ./zabbix/playbook.yml"
  ]
 }

@@ -1,7 +1,3 @@
-variable "host" {
-  default = "all"
-}
-
 variable cpu{
   default= 2
   type= number
