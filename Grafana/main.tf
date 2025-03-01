@@ -30,7 +30,7 @@ resource "grafana_dashboard" "org_dashboard" {
 
 # defining the data source
 resource "grafana_data_source" "prometheus" {
-  name = "Prometheus"
-  type = "prometheus"
-  url  = "http://prometheus:9090"
-}
+  name       = "Prometheus"
+  type       = "prometheus"
+  url        = "http://prometheus:9090"
+  }
