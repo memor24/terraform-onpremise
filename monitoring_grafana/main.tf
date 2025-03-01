@@ -1,72 +1,52 @@
-# VMware ESXi (hosting an ubuntu)
-
-# vsphere datasource
-
-data "vsphere_datacenter" "dc"{
-  name="dc-01"
-}
-
-data "vsphere_datastore" "ds"{
-  name="datastore-01"
-  datacenter_id=data.vsphere_datacenter.dc.id
-}
-
-data "vsphere_compute_cluster" "cc"{
-  name="cluster-01"
-  datacenter_id=data.vsphere_datacenter.dc.id 
-}
-
-data "vsphere_network" "nw"{
-  name="VM Network"
-  datacenter_id=data.vsphere_datacenter.dc.id
-}
-
-# vsphere resources
-
-resource "vsphere_virtual_machine" "vm" {
-  name=
-  resource_pool_id=data.vsphere_compute_cluster.cc.resource_pool_id
-  datastore_id=data.vsphere_datastore.ds.id
-  num_cpus=var.num_cpu
-  memory=var.ram
-  guest_id="LinuxGrafana"
-  network_interface{
-    network_id=data.vsphere_network.nw.id
-  }
-  disk{
-    label="disk0"
-    size=20
+terraform {
+  required_providers {
+    virtualbox = {
+      source  = "terra-farm/virtualbox"
+      version = "0.2.1"
+    }
   }
 }
-## output
-output "my_ip_address" {
-  value= vsphere_virtual_machine.vm.default_ip_address
+
+resource "virtualbox_vm" "new_vboxvm" {
+  name      = "zabbix_server_frontend_agent2"
+  image     = "https://app.vagrantup.com/ubuntu/boxes/bionic64/versions/20180903.0.0/providers/virtualbox.box"
+  cpus      = var.cpu
+  memory    = var.ram 
+  user_data = file("${path.module}/user_data")
+
+  network_adapter {
+    type           = "hostonly"
+    host_interface = "vboxnet1"
+  }
 }
 
-### prep for ansible 
-resource local_file "vm_ip" {
-  content= vsphere_virtual_machine.vm.default_ip_address
-  filename= vm_ip.txt # vm ip created as a local file
+output "vm_ip" {
+  value = element(virtualbox_vm.newvbox_vm.*.network_adapter.0.ipv4_address, 1)
 }
 
-resource null_resource "remote" {
-  depends_on= [vsphere_virtual_machine.vm]
-  connection{
-    type= "ssh"
-    user= "root"
-    password= var.password # in tfvars or as secret
-    host= var.host # in tfvars
+# prep to run the ansible
+resource "local_file" "vm_ip" {
+  content   = element(virtualbox_vm.newvbox_vm.*.network_adapter.0.ipv4_address, 1)
+  file_name = vm_ip.txt
+}
+resource "null_resource" "sshconnection" {
+  depends_on = [virtualbox_vm.new_vboxvm]
+  connection {
+    type     = "ssh"
+    user     = "root"
+    password = var.password # defined in tfvars
+    host     = var.host
   }
 }
 
 provisioner "file" {
-  source= "vm_ip.txt"
-  dest= "hosts.txt" # the inventory file
+  source      = "vm_ip"
+  destination = "hosts.txt" # on the vm, connected as root
 }
-
-# run ansible on the vm
+# run the ansible to install and run the monitoring stack
 provisioner "local-exec" {
- inline=[
-   command = "ansible-playbook -i /root/hosts.txt ./zabbix/playbook.yml"
- ]
+  inline=[
+  "ansible-playbook install_grafana.yml"
+  ]
+
 }
