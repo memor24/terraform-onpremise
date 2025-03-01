@@ -7,3 +7,11 @@ Monitoring stack for onprem virtual machine infrastructure with Zabbix by runnin
 
 ![image](https://github.com/user-attachments/assets/6cb6c7af-31fa-4adf-9196-fe06bcc4dff0)
 
+Just run the Terraform code:
+```
+terraform init
+terraform plan
+terraform apply
+
+terraform destroy
+```
