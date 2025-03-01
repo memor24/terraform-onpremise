@@ -1,0 +1,40 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    
+    - name: update apt chache
+      apt:
+        update_cache: yes
+
+    - name: install required packages
+      apt:
+        name: 
+          - software-properties-common
+          - apt-transport-https
+        state: present
+    
+    - name: add grafana gpg key to root
+      shell: curl https://packages.grafana.com/gpg.key | sudo apt-key add -
+
+    - name: add grafana repo
+      apt_repository:
+        repo: "deb https://packages.grafana.com/oss/deb stable main"
+        state: present
+        filename: grafana
+
+    - name: install grafana
+      apt:
+        name: grafana
+        state: present
+
+    - name: enable and start grafana
+      service:
+        name: grafana-server
+        enabled: yes
+        state: started
+
+# sudo ufw allow 3000/tcp
+# sudo reload
+# http://<vm_ip_address>:3000  # (admin/admin)
+        
