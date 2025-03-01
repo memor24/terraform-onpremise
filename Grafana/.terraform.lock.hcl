@@ -2,8 +2,10 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/grafana/grafana" {
-  version = "3.10.0"
+  version     = "3.10.0"
+  constraints = ">= 1.0.0"
   hashes = [
+    "h1:0M4cpG2D+4ZQR2wztNUK5dI4G+LG7/bUE2uaQxlg124=",
     "h1:u/OEAfK8rUJi1D/wWcyysFLaFFiIiLevkkWTeh0X8GE=",
     "zh:1a2c215eaa42229c887a5dbb6bc71df1c5c08c3a9a2213f4711a2216a8769766",
     "zh:21beb913f86b81e323a8562e86ac82c3a0ba9400da7d67311646b840c1eb5982",
