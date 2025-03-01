@@ -1,3 +1,5 @@
 ### Automating infrastructure provision and configuration:
-- ESXi_Automation (provision of vsphere esxi-ubuntu and install zabbix with ansible)
-- Monitoring_Automation (provision of a virtbox vm using terraform and install grafana with ansible )
+- Grafana provision as code with Terraform
+- Monitoring with Grafana on the provision of a virtual machine using Terraform and Ansible 
+- Monitoring stack with Prometheus and Grafana on any host using Terraform and modules
+- Monitoring stack with Zabbix on the provision of a VMware vsphere esxi-ubuntu server with Terraform and Ansible)
