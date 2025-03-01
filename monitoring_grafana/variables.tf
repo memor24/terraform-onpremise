@@ -1,9 +1,25 @@
+# setup
 
-
-variable "vm_name" {
-      description= "name of vSphere vm and the hostname of the machine"
+variable "vsphere_user" {
+  description = "vSphere user name, defined in tfvars"
 }
 
-variable "vm_ip" {
-    description= "ip used for vSphere vm"
+variable "vsphere_password" {
+  description = "vSphere password, defined in tfvars, or injected as secret"
 }
+
+variable "vcenter" {
+  description = "vCenter server IP, in tfvars"
+}
+
+
+## vm
+
+variable "cpu"{
+    default=1
+}
+
+variable "ram"{
+    default=1024
+}
+
