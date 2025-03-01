@@ -4,6 +4,7 @@
 provider "registry.terraform.io/grafana/grafana" {
   version = "3.10.0"
   hashes = [
+    "h1:0M4cpG2D+4ZQR2wztNUK5dI4G+LG7/bUE2uaQxlg124=",
     "h1:u/OEAfK8rUJi1D/wWcyysFLaFFiIiLevkkWTeh0X8GE=",
     "zh:1a2c215eaa42229c887a5dbb6bc71df1c5c08c3a9a2213f4711a2216a8769766",
     "zh:21beb913f86b81e323a8562e86ac82c3a0ba9400da7d67311646b840c1eb5982",
@@ -32,6 +33,7 @@ provider "registry.terraform.io/kreuzwerker/docker" {
   version     = "3.0.2"
   constraints = ">= 3.0.0"
   hashes = [
+    "h1:DcRxJArfX6EiATluWeCBW7HoD6usz9fMoTK2U3dmyPk=",
     "h1:cT2ccWOtlfKYBUE60/v2/4Q6Stk1KYTNnhxSck+VPlU=",
     "zh:15b0a2b2b563d8d40f62f83057d91acb02cd0096f207488d8b4298a59203d64f",
     "zh:23d919de139f7cd5ebfd2ff1b94e6d9913f0977fcfc2ca02e1573be53e269f95",
